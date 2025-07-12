@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>πLab - ENS Tétouan Maths</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+  <style>
+    :root {
+      --main-blue: #007bff;
+      --main-dark: #111;
+      --main-light: #e9f1f1;
+      --text-color: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: var(--main-light);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #1a1a1a;
+      color: #eee;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgb(89, 78, 192);
+    }
+
+    .logo-circle {
+      width: 60px;
+      height: 60px;
+      background-color: var(--main-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-text {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #settings-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .home-screen {
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    #enter-btn {
+      background-color: var(--main-blue);
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #enter-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .subtitle {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    #settings-panel {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    #settings-panel label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    body.dark #settings-panel {
+      background: #2a2a2a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-circle">
+      <span class="logo-text">πLab</span>
+    </div>
+  </header>
+
+  <main class="home-screen">
+    <h1 class="title">ENS Tétouan Maths</h1>
+    <button id="enter-btn" onclick="window.location.href='semestres.html'">Entrer</button>
+    <p class="subtitle">منصة خاصة لطلبة الرياضيات - ENS Tétouan Maths</p>
+  </main>
+
+
+  <script>
+    const settingsBtn = document.getElementById('settings-btn');
+    const settingsPanel = document.getElementById('settings-panel');
+    const darkToggle = document.getElementById('dark-mode-toggle');
+    const fontSize = document.getElementById('font-size');
+
+    settingsBtn.addEventListener('click', () => {
+      settingsPanel.style.display = settingsPanel.style.display === 'block' ? 'none' : 'block';
+    });
+    fontSize.addEventListener('change', (e) => {
+      const size = e.target.value;
+      document.body.style.fontSize = size === 'small' ? '14px' : size === 'large' ? '20px' : '16px';
+    });
+  </script>
+  
+</body>
+</html>

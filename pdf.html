@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>πLab – Documents PDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet"/>
+    <script src="js/pdfGridLoader.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f2f4f8;
+      color: #1e1e1e;
+      transition: opacity 0.4s ease;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5em;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+      justify-content: center;
+    }
+
+    .pdf-box {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      padding: 20px;
+      width: 180px;
+      text-align: center;
+    }
+
+    .icon-box {
+      width: 100px;
+      height: 100px;
+      background-color: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 8px;
+      margin: 0 auto 15px;
+      text-transform: uppercase;
+    }
+
+    .btn-download, .btn-view {
+      background-color: #0066cc;
+      color: white;
+      padding: 7px 12px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9em;
+      cursor: pointer;
+      display: block;
+      margin: 8px auto;
+      width: 90%;
+    }
+
+    /* Modal PDF View */
+    .pdf-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .pdf-modal iframe {
+      width: 90%;
+      height: 90%;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Fade Transition */
+    .fade {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="fade">
+
+  <header>Documents PDF</header>
+
+  <div class="grid" id="pdfContainer"></div>
+
+  <!-- PDF Modal View -->
+  <div class="pdf-modal" id="pdfModal">
+    <span class="close-btn" onclick="closePdf()">×</span>
+    <iframe id="pdfViewer" src=""></iframe>
+  </div>
+
+  <script src="js/pdfGridLoader.js"></script>
+  <script>
+    // Transition on load
+    window.onload = () => {
+      document.body.classList.remove('fade');
+    }
+
+    // Open PDF
+    function openPdf(path) {
+      const modal = document.getElementById('pdfModal');
+      const viewer = document.getElementById('pdfViewer');
+      viewer.src = path;
+      modal.style.display = "flex";
+    }
+
+    function closePdf() {
+      const modal = document.getElementById('pdfModal');
+      const viewer = document.getElementById('pdfViewer');
+      viewer.src = "";
+      modal.style.display = "none";
+    }
+  </script>
+  
+</body>
+</html>
+

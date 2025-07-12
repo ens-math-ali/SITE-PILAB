@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>πLab - Modules</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #b5c0c5;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      padding: 2rem;
+      color: #005bbb;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .unit-card {
+      background-color: #ffffff;
+      padding: 1.2rem;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+    .unit-card:hover {
+      transform: translateY(-4px);
+      background-color: #797f88;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Modules</h1>
+  <div class="grid" id="modules-container"></div>
+
+  <script>
+    const units = {
+      s1: [
+        { name: "Analyse 1", id: "s1-analyse1" },
+        { name: "Statistiques descriptives", id: "s1-statistiques" },
+        { name: "Algèbre 1", id: "s1-algebre1" },
+        { name: "Algèbre 2", id: "s1-algebre2" },
+        { name: "Informatique 1", id: "s1-info1" }
+      ],
+      s2: [
+        { name: "Analyse 2", id: "s2-analyse2" },
+        { name: "Analyse 3", id: "s2-analyse3" },
+        { name: "Algèbre 3", id: "s2-algebre3" },
+        { name: "Informatique 2", id: "s2-info2" }
+      ],
+      s3: [
+        { name: "Analyse 4", id: "s3-analyse4" },
+        { name: "Analyse 5", id: "s3-analyse5" },
+        { name: "Algèbre 4", id: "s3-algebre4" },
+        { name: "Informatique 3 (C)", id: "s3-info3" }
+      ],
+      s4: [
+        { name: "Analyse 6", id: "s4-analyse6" },
+        { name: "Analyse numérique", id: "s4-numerique" },
+        { name: "Probabilités", id: "s4-proba" },
+        { name: "Algèbre 5", id: "s4-algebre5" },
+        { name: "Informatique 4 (C)", id: "s4-info4" }
+      ],
+      s5: [
+        { name: "Topologie", id: "s5-topologie" },
+        { name: "Structures algébriques", id: "s5-algebrique" },
+        { name: "Mesure et intégration", id: "s5-mesure" },
+        { name: "Déontologie", id: "s5-dion" },
+       
+      ],
+      s6: [
+        { name: "Calcul différentiel", id: "s6-diff" },
+        { name: "Analyse complexe", id: "s6-complexe" },
+        { name: "Algèbre et géométrie", id: "s6-geo" },
+        { name: "approches et méthodes", id: "s6-methodes" },
+        { name: "Épistémologie", id: "s6-epi" }
+      ],
+      examens: [
+        { name: "Examens S1", id: "e1" },
+        { name: "Examens S2", id: "e2" },
+        { name: "Examens S3", id: "e3" },
+        { name: "Examens S4", id: "e4" },
+        { name: "Examens S5", id: "e5" },
+        { name: "Examens S6", id: "e6" }
+      ]
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const semestre = params.get("semestre");
+    const title = document.getElementById("title");
+    const container = document.getElementById("modules-container");
+
+    if (semestre && units[semestre]) {
+      title.textContent = `Modules – ${semestre.toUpperCase()}`;
+      units[semestre].forEach(unit => {
+        const card = document.createElement("div");
+        card.className = "unit-card";
+        card.textContent = unit.name;
+        card.onclick = () => window.location.href = `pdf.html?u=${unit.id}`;
+        container.appendChild(card);
+      });
+    } else {
+      title.textContent = "Aucun semestre sélectionné";
+      container.innerHTML = "<p style='text-align:center'>Veuillez retourner à la page précédente.</p>";
+    }
+  </script>
+
+</body>
+</html>
