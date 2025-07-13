@@ -105,6 +105,8 @@ const pdfList = {
     { label: "cours complet", file: "cours.pdf" },],
 "s5-dion": [
     { label: "cours complet", file: "cours.pdf" },],
+    "s5-didactique": [
+    { label: "cours complet", file: "cours.pdf" },],
 "s6-epi": [
     { label: "cours complet", file: "cours.pdf" },],
 "s6-methodes": [
@@ -135,7 +137,7 @@ const pdfList = {
     { label: "EX 24/25", file: "1.pdf" },
      { label: "EX 23/24", file: "2.pdf" },
     { label: "EX 22/23", file: "3.pdf" },],
-"e6": [
+"e6": [ { label: "EX 24/25", file: "1.pdf" },
     { label: "EX 23/24", file: "2.pdf" },
      { label: "EX 22/23", file: "3.pdf" },],
 
