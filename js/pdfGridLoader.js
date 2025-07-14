@@ -30,11 +30,10 @@ const pdfList = {
     { label: "TD2", file: "TD2.pdf" },
     { label: "TD3", file: "TD3.pdf" },],
     "s1-info1": [
-    { label: "chp 1", file: "chp1.pdf" },
-    { label: "chp 2", file: "chp2.pdf" },
+    { label: "chp 1 et 2", file: "chp1et2.pdf" },
      { label: "chp 3", file: "chp3.pdf" },
     { label: "chp 4", file: "chp4.pdf" },
-     { label: "TD1", file: "TD1.pdf" },],
+     { label: "TD", file: "TD1.pdf" },],
   "s2-analyse2": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
@@ -53,7 +52,9 @@ const pdfList = {
      "s2-info2": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
-    { label: "TD2", file: "TD2.pdf" },],
+    { label: "TD2", file: "TD2.pdf" },
+  { label: "TD3", file: "TD3.pdf" },
+    { label: "TD4", file: "TD4.pdf" },],
 "s3-analyse4": [
     { label: "chp1", file: "chp1.pdf" },
      { label: "chp2", file: "chp2.pdf" },
@@ -103,8 +104,6 @@ const pdfList = {
       { label: "Démos", file: "demo.pdf" },],
     "s5-algebrique": [
     { label: "cours complet", file: "cours.pdf" },],
-"s5-dion": [
-    { label: "cours complet", file: "cours.pdf" },],
     "s5-didactique": [
     { label: "cours complet", file: "cours.pdf" },],
 "s6-epi": [
@@ -122,9 +121,11 @@ const pdfList = {
      { label: "Démos", file: "demo.pdf" },
       { label: "TDS/CORR", file: "TDS.pdf" },],
 "e1": [
-    { label: "EX 23/24", file: "2.pdf" },],
+    { label: "EX 23/24", file: "2.pdf" },
+  { label: "EX 21/22", file: "4.pdf" },],
 "e2": [
-    { label: "EX 23/24", file: "2.pdf" },],
+    { label: "EX 23/24", file: "2.pdf" },
+  { label: "EX 21/22", file: "4.pdf" },],
 "e3": [
     { label: "EX 24/25", file: "1.pdf" },
      { label: "EX 22/23", file: "2.pdf" },
