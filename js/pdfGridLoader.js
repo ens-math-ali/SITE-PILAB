@@ -8,6 +8,7 @@ const pdfList = {
   "s1-analyse1": [
     { label: "Chp 1", file: "cour1.pdf" },
     { label: "Chp 2", file: "cour2.pdf" },
+    { label: "Chp 3", file: "cour3.pdf" },
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" }],
 "s1-statistiques": [
@@ -61,7 +62,8 @@ const pdfList = {
       { label: "chp3", file: "chp3.pdf" },
      { label: "TD1", file: "TD1.pdf" },
      { label: "TD2", file: "TD2.pdf" },
-    { label: "les séries entiers", file: "se.pdf" },],
+    { label: "les séries entiers", file: "se.pdf" },
+    { label: "séries de fourier", file: "sf.pdf" },],
     "s3-analyse5": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TDS", file: "TDS.pdf" },
