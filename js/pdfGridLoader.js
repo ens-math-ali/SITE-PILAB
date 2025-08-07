@@ -109,7 +109,7 @@ const pdfList = {
     "s5-didactique": [
     { label: "cours complet", file: "cours.pdf" },],
     "s5-dion": [
-    { label: "cours complet", file: "cours.pdf" },],
+    { label: "cours complet ", file: "cours.pdf" },],
     
 "s6-epi": [
     { label: "cours complet", file: "cours.pdf" },],
