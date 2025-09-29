@@ -106,7 +106,7 @@ const pdfList = {
       { label: "Démos", file: "demo.pdf" },],
     "s5-algebrique": [
     { label: "cours complet", file: "cours.pdf" },],
-     "s5-dion": [
+   "s5-diontologie": [
     { label: "cours complet", file: "cours.pdf" },],
     "s5-didactique": [
     { label: "cours complet", file: "cours.pdf" },],
