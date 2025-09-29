@@ -66,8 +66,7 @@ const pdfList = {
     { label: "séries de fourier", file: "sf.pdf" },],
     "s3-analyse5": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS", file: "TDS.pdf" },
-    { label: "corre", file: "corr.pdf" },],
+     { label: "TDS", file: "TDS.pdf" },],
     "s3-algebre4": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TDS/Corr 22/23", file: "TDS.pdf" },],
