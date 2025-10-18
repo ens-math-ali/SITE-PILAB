@@ -19,11 +19,12 @@
       color: #005bbb;
     }
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       padding: 2rem;
-      max-width: 1000px;
+      max-width: 400px;
       margin: auto;
     }
     .unit-card {
@@ -53,18 +54,23 @@
         { name: "Statistiques descriptives", id: "s1-statistiques" },
         { name: "Algèbre 1", id: "s1-algebre1" },
         { name: "Algèbre 2", id: "s1-algebre2" },
+        { name: "Thermodynamique", id: "s1-thermo" },
         { name: "Informatique 1", id: "s1-info1" }
       ],
       s2: [
         { name: "Analyse 2", id: "s2-analyse2" },
         { name: "Analyse 3", id: "s2-analyse3" },
         { name: "Algèbre 3", id: "s2-algebre3" },
+        { name: "Optique", id: "s2-optique" },
+        { name: "Electrostatique", id: "s2-electro" },
         { name: "Informatique 2", id: "s2-info2" }
       ],
       s3: [
         { name: "Analyse 4", id: "s3-analyse4" },
         { name: "Analyse 5", id: "s3-analyse5" },
         { name: "Algèbre 4", id: "s3-algebre4" },
+        { name: "sience éducation", id: "s3-sc" },
+         { name: "mécanique", id: "s3-mecanique" },
         { name: "Informatique 3 (C)", id: "s3-info3" }
       ],
       s4: [
@@ -72,6 +78,7 @@
         { name: "Analyse numérique", id: "s4-numerique" },
         { name: "Probabilités", id: "s4-proba" },
         { name: "Algèbre 5", id: "s4-algebre5" },
+         { name: "Didactique", id: "s4-dida" },
         { name: "Informatique 4 (C)", id: "s4-info4" }
       ],
       s5: [
@@ -96,7 +103,19 @@
         { name: "Examens S4", id: "e4" },
         { name: "Examens S5", id: "e5" },
         { name: "Examens S6", id: "e6" }
+      ],
+      Concours: [
+        { name: "2024", id: "24" },
+        { name: "2023", id: "23" },
+        { name: "2022", id: "22" },
+        { name: "2021", id: "21" },
+        { name: "2020", id: "20" },
+        { name: "2019", id: "19" },
+        { name: "2018", id: "18" },
+        { name: "2017", id: "17" },
+        { name: "2016", id: "16" }
       ]
+      
     };
 
     const params = new URLSearchParams(window.location.search);

@@ -35,6 +35,10 @@ const pdfList = {
      { label: "chp 3", file: "chp3.pdf" },
     { label: "chp 4", file: "chp4.pdf" },
      { label: "TD", file: "TD1.pdf" },],
+     "s1-thermo": [
+    { label: "cours complet", file: "cours.pdf" },
+     { label: "résumé", file: "résum.pdf" },
+     { label: "TDS", file: "TDS.pdf" },],
   "s2-analyse2": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
@@ -45,6 +49,12 @@ const pdfList = {
      { label: "TD", file: "TD.pdf" },
     { label: "DL usuels", file: "DL.pdf" },
    ],
+   "s2-optique": [
+    { label: "cours complet", file: "cours.pdf" },
+     { label: "TDS", file: "TDS.pdf" },],
+    "s2-electro": [
+    { label: "cours complet", file: "cours.pdf" },
+     { label: "TDS", file: "TDS.pdf" },],
    "s2-algebre3": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
@@ -62,26 +72,39 @@ const pdfList = {
       { label: "chp3", file: "chp3.pdf" },
      { label: "TD1", file: "TD1.pdf" },
      { label: "TD2", file: "TD2.pdf" },
+     { label: "CORR TDS", file: "corr.pdf" },
     { label: "les séries entiers", file: "se.pdf" },
     { label: "séries de fourier", file: "sf.pdf" },],
     "s3-analyse5": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS", file: "TDS.pdf" },],
+     { label: "TDS", file: "TDS.pdf" },
+    { label: "corr TDS", file: "corr.pdf" },],
     "s3-algebre4": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TDS/Corr 22/23", file: "TDS.pdf" },],
+     "s3-sc": [
+     { label: "cours complet", file: "sc.pdf" },],
 "s3-info3": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },],
+    "s3-mecanique": [
+    { label: "mc point", file: "mp.pdf" },
+     { label: "mc solide", file: "ms.pdf" },
+      { label: "résumé mp", file: "rs.pdf" },
+     { label: "TDS", file: "TDS.pdf" },
+    { label: "corr TDS", file: "corr.pdf" },],
  "s4-analyse6": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
       { label: "TD2", file: "TD2.pdf" },
+       { label: "CORR TDS", file: "corr.pdf" },
      { label: "DSE", file: "DSE.pdf" },],
  "s4-numerique": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TDS", file: "TDS.pdf" },],
+     "s4-dida": [
+     { label: "cours complet", file: "cours.pdf" },],
 "s4-proba": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
@@ -145,6 +168,36 @@ const pdfList = {
 "e6": [ { label: "EX 24/25", file: "1.pdf" },
     { label: "EX 23/24", file: "2.pdf" },
      { label: "EX 22/23", file: "3.pdf" },],
+     "24": [
+    { label: "MATHS", file: "M24.pdf" },],
+    "23": [
+    { label: "MATHS", file: "M23.pdf" },
+     { label: "didactique", file: "S23.pdf" },],
+    "22": [
+    { label: "MATHS", file: "M22.pdf" },
+     { label: "didactique", file: "D22.pdf" },],
+    "21": [
+    { label: "MATHS", file: "M21.pdf" },
+     { label: "didactique", file: "D21.pdf" },
+    { label: "CORR MATHS", file: "MC21.pdf" },],
+    "20": [
+    { label: "MATHS DIDACTIQUE", file: "MD20.pdf" },
+     { label: "CORR MATHS", file: "MC20.pdf" },],
+    "19": [
+   { label: "MATHS DIDACTIQUE", file: "MD19.pdf" },
+     { label: "CORR MATHS", file: "MC19.pdf" },],
+    "18": [
+    { label: "MATHS DIDACTIQUE", file: "MD18.pdf" },
+     { label: "CORR MATHS", file: "MC18.pdf" },],
+    "17": [
+    { label: "MATHS DIDACTIQUE", file: "MD17.pdf" },
+     { label: "CORR MATHS", file: "MC17.pdf" },],
+    "16": [
+    { label: "DIDACTIQUE sc", file: "D16.pdf" },],
+    
+    
+    
+
 
 };
 
