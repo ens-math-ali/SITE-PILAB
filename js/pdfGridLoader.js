@@ -83,7 +83,8 @@ const pdfList = {
     { label: "cours complet", file: "cours.pdf" },
      { label: "TDS/Corr 22/23", file: "TDS.pdf" },],
      "s3-sc": [
-     { label: "cours complet", file: "sc.pdf" },],
+     { label: "cours complet", file: "sc.pdf" },
+    { label: "résumé", file: "rsm.pdf" },],
 "s3-info3": [
     { label: "cours complet", file: "cours.pdf" },
      { label: "TD1", file: "TD1.pdf" },
