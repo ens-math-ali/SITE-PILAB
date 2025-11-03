@@ -27,7 +27,7 @@ const pdfList = {
   "s1-algebre2": [
     { label: "chp 1", file: "chp1.pdf" },
     { label: "chp 2", file: "chp2.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
+     { label: "TD1", file: "td.pdf" },
     { label: "TD2", file: "TD2.pdf" },
     { label: "TD3", file: "TD3.pdf" },],
     "s1-info1": [
