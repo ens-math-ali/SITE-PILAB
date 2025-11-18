@@ -128,7 +128,9 @@ const pdfList = {
      { label: "TDS/Corr", file: "TDS.pdf" },
       { label: "Démos", file: "demo.pdf" },],
     "s5-algebrique": [
+       { label: "démos", file: "Démos.pdf" },
     { label: "cours complet", file: "cours.pdf" },],
+   
    "s5-diontologie": [
     { label: "cours complet", file: "cours.pdf" },],
     "s5-didactique": [
