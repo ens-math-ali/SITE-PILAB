@@ -121,6 +121,7 @@ const pdfList = {
       { label: "TD2", file: "TD2.pdf" },],
 "s5-topologie": [
     { label: "cours complet", file: "cours.pdf" },
+     { label: "Espaces Métriques", file: "EM.pdf" },
      { label: "TDS/corr", file: "TDS.pdf" },
       { label: "Démos", file: "demo.pdf" },],
     "s5-mesure": [
