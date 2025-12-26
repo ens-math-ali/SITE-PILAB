@@ -152,6 +152,7 @@ const pdfList = {
      { label: "Démos", file: "demo.pdf" },
       { label: "TDS/CORR", file: "TDS.pdf" },],
 "e1": [
+  { label: "EX 24/25", file: "1.pdf" },
     { label: "EX 23/24", file: "2.pdf" },
   { label: "EX 21/22", file: "4.pdf" },],
 "e2": [
