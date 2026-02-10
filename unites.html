@@ -1,53 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
 
-   <!DOCTYPE html>
-<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>πLab - Modules</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'JetBrains Mono', monospace;
-      background-color: #9fd7fe;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      padding: 2rem;
-      color: #005bbb;
-    }
-    .grid {
-      display: flex;
-      flex-direction: column;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      max-width: 400px;
-      margin: auto;
-    }
-    .unit-card {
-      background-color: #ffffff;
-      padding: 1.2rem;
-      text-align: center;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
-    .unit-card:hover {
-      transform: translateY(-4px);
-      background-color: rgb(109, 219, 239);
-    }
-  </style>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Modules et unités d'enseignement par semestre. Accédez aux ressources pédagogiques du PILAB.">
+  <meta name="keywords" content="Modules, Unités, Mathématiques, Cours, TD, ENS Tétouan">
+  <meta name="author" content="PILAB - ENS Tétouan">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self';">
 
-  <h1 id="title">Modules</h1>
-  <div class="grid" id="modules-container"></div>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://site-pilab.github.io/unites.html">
+  <meta property="og:title" content="πLab - Modules">
+  <meta property="og:description"
+    content="Modules et unités d'enseignement par semestre. Accédez aux ressources pédagogiques du PILAB.">
+  <meta property="og:image" content="https://site-pilab.github.io/images/logo.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://site-pilab.github.io/unites.html">
+  <meta property="twitter:title" content="πLab - Modules">
+  <meta property="twitter:description"
+    content="Modules et unités d'enseignement par semestre. Accédez aux ressources pédagogiques du PILAB.">
+  <meta property="twitter:image" content="https://site-pilab.github.io/images/logo.svg">
+
+  <link rel="canonical" href="https://site-pilab.github.io/unites.html">
+  <title>πLab - Modules</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Structured Data (Breadcrumb) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://site-pilab.github.io/index.html"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Semestres",
+      "item": "https://site-pilab.github.io/semestres.html"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Modules",
+      "item": "https://site-pilab.github.io/unites.html"
+    }]
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <img src="images/logo.svg" alt="πLab Logo" class="logo-img">
+      </a>
+
+      <div class="controls">
+        <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+          <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 id="title" class="page-title">Modules</h1>
+    <div class="grid-layout" id="modules-container"></div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="semestres.html" class="btn-secondary">
+        <span>←</span> Retour aux Semestres
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 πLab - ENS Tétouan Maths. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
+    // Data
     const units = {
       s1: [
         { name: "Analyse 1", id: "s1-analyse1" },
@@ -69,8 +111,8 @@
         { name: "Analyse 4", id: "s3-analyse4" },
         { name: "Analyse 5", id: "s3-analyse5" },
         { name: "Algèbre 4", id: "s3-algebre4" },
-        { name: "science éducation", id: "s3-sc" },
-         { name: "mécanique", id: "s3-mecanique" },
+        { name: "Science éducation", id: "s3-sc" },
+        { name: "Mécanique", id: "s3-mecanique" },
         { name: "Informatique 3 (C)", id: "s3-info3" }
       ],
       s4: [
@@ -78,22 +120,21 @@
         { name: "Analyse numérique", id: "s4-numerique" },
         { name: "Probabilités", id: "s4-proba" },
         { name: "Algèbre 5", id: "s4-algebre5" },
-         { name: "Didactique", id: "s4-dida" },
+        { name: "Didactique", id: "s4-dida" },
         { name: "Informatique 4 (C)", id: "s4-info4" }
       ],
       s5: [
         { name: "Topologie", id: "s5-topologie" },
         { name: "Structures algébriques", id: "s5-algebrique" },
         { name: "Mesure et intégration", id: "s5-mesure" },
-        { name: "Diontologie", id: "s5-diontologie" },
+        { name: "Déontologie", id: "s5-diontologie" },
         { name: "Didactique", id: "s5-didactique" }
-        
       ],
       s6: [
         { name: "Calcul différentiel", id: "s6-diff" },
         { name: "Analyse complexe", id: "s6-complexe" },
         { name: "Algèbre et géométrie", id: "s6-geo" },
-        { name: "approches et méthodes", id: "s6-methodes" },
+        { name: "Approches et méthodes", id: "s6-methodes" },
         { name: "Épistémologie", id: "s6-epi" }
       ],
       examens: [
@@ -115,9 +156,9 @@
         { name: "2017", id: "17" },
         { name: "2016", id: "16" }
       ]
-      
     };
 
+    // DOM Manipulation
     const params = new URLSearchParams(window.location.search);
     const semestre = params.get("semestre");
     const title = document.getElementById("title");
@@ -125,19 +166,29 @@
 
     if (semestre && units[semestre]) {
       title.textContent = `Modules – ${semestre.toUpperCase()}`;
+
       units[semestre].forEach(unit => {
-        const card = document.createElement("div");
-        card.className = "unit-card";
-        card.textContent = unit.name;
-        card.onclick = () => window.location.href = `pdf.html?u=${unit.id}`;
+        const card = document.createElement("a");
+        card.className = "card";
+        card.href = `pdf.html?u=${unit.id}`;
+
+        // Add a visual indicator or icon placeholder if desired
+        const heading = document.createElement("h3");
+        heading.textContent = unit.name;
+
+        card.appendChild(heading);
         container.appendChild(card);
       });
     } else {
       title.textContent = "Aucun semestre sélectionné";
-      container.innerHTML = "<p style='text-align:center'>Veuillez retourner à la page précédente.</p>";
+      container.innerHTML = `
+                <div style="grid-column: 1/-1; text-align: center;">
+                    <p class="hero-subtitle">Veuillez sélectionner un semestre valide.</p>
+                </div>
+            `;
     }
   </script>
-
+  <script src="js/main.js" defer></script>
 </body>
-</html>
 
+</html>

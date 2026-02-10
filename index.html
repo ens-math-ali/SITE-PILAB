@@ -1,206 +1,89 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>πLab - ENS Tétouan Maths</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap">
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/main.js"></script>
-  <style>
-    @import url(https://fonts.googleapis.com/css2?family=Bangers&display=swap);
-    :root {
-      --main-blue: #007bff;
-      --main-dark: #111;
-      --main-light: #e9f1f1;
-      --text-color: #222;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'JetBrains Mono', monospace;
-      background-color: var(--main-light);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background-color: #1a1a1a;
-      color: #eee;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: var(--main-blue);
-    }
-      
-    h2{
-      
-      color: white;
-      font-family: "Bangers", system-ui;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: 2px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plateforme d'excellence pour les étudiants en mathématiques de l'ENS Tétouan. Résumés, cours et examens.">
+    <meta name="keywords" content="Mathématiques, ENS Tétouan, Cours, TD, Examens, Algèbre, Analyse, PILAB">
+    <meta name="author" content="PILAB - ENS Tétouan">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self';">
     
-    }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://site-pilab.github.io/">
+    <meta property="og:title" content="πLab - ENS Tétouan Maths">
+    <meta property="og:description" content="Plateforme d'excellence pour les étudiants en mathématiques de l'ENS Tétouan. Résumés, cours et examens.">
+    <meta property="og:image" content="https://site-pilab.github.io/images/logo.svg">
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://site-pilab.github.io/">
+    <meta property="twitter:title" content="πLab - ENS Tétouan Maths">
+    <meta property="twitter:description" content="Plateforme d'excellence pour les étudiants en mathématiques de l'ENS Tétouan. Résumés, cours et examens.">
+    <meta property="twitter:image" content="https://site-pilab.github.io/images/logo.svg">
 
-    .home-screen {
-      height: calc(100vh - 80px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .title {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    #enter-btn {
-       font-family: 'JetBrains Mono', monospace;
-     position: relative;
-  display: inline-block;
-  margin: 15px;
-  padding: 15px 30px;
-  text-align: center;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #007bff;
-  background: transparent;
-  cursor: pointer;
-  transition: ease-out 0.5s;
-  border: 2px solid #007bff;
-  border-radius: 10px;
-  box-shadow: inset 0 0 0 0 #725AC1;
-    }
-
-    #enter-btn:hover {
-    color: white;
-  box-shadow: inset 0 -100px 0 0 #007bff;
- 
-    }
+    <link rel="canonical" href="https://site-pilab.github.io/">
+    <title>πLab - ENS Tétouan Maths</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     
-
-    .subtitle {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 0.9rem;
-      color: gray;
+    <!-- Fonts & CSS -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "πLab - ENS Tétouan Maths",
+      "url": "https://site-pilab.github.io/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://site-pilab.github.io/unites.html?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ENS Tétouan - Département Mathématiques",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://site-pilab.github.io/images/logo.svg"
+        }
+      }
     }
-
-    #settings-panel {
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: none;
-    }
-
-    #settings-panel label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-    }
-
-    body.dark #settings-panel {
-      background: #2a2a2a;
-      color: white;
-    }
-   
-  </style>
+    </script>
 </head>
 <body>
- <header>
-  <!-- From Uiverse.io by satyamchaudharydev --> 
-<button class="button" data-text="Awesome">
-    <span class="actual-text">&nbsp;πlab&nbsp;</span>
-    <span aria-hidden="true" class="hover-text">&nbsp;πlab&nbsp;</span>
-</button>
-<style>
-  /* From Uiverse.io by satyamchaudharydev */ 
-/* === removing default button style ===*/
-.button {
-  margin: 0;
-  height: auto;
-  background: transparent; 
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.svg" alt="πLab Logo" class="logo-img">
+            </a>
+            
+            <div class="controls">
+                <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
+                </button>
+            </div>
 
-/* button styling */
-.button {
-  --border-right: 6px;
-  --text-stroke-color: white;
-  --animation-color:white;
-  --fs-size: 2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-/* this is the text, when you hover on button */
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-/* hover */
-.button:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
-}
-</style>
-</header>
-  <main class="home-screen">
-    <h1 class="title"> ENS Tétouan Maths </h1>
-    <button id="enter-btn" onclick="window.location.href='semestres.html'">Entrer</button>
-    <p class="subtitle">منصة خاصة لطلبة الرياضيات - ENS Tétouan Maths </p>
-  </main>
+        </div>
+    </header>
 
+    <main class="hero">
+        <h1 class="hero-title">ENS Tétouan Maths</h1>
+        <p class="hero-subtitle">Platforme d'excellence pour les étudiants en mathématiques.</p>
+        
+        <a href="semestres.html" class="btn-primary">
+            Entrer
+            <span class="arrow"></span>
+        </a>
+    </main>
 
-  <script>
-    const settingsBtn = document.getElementById('settings-btn');
-    const settingsPanel = document.getElementById('settings-panel');
-    const darkToggle = document.getElementById('dark-mode-toggle');
-    const fontSize = document.getElementById('font-size');
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PILab - ENS Tétouan Maths</p>
+        </div>
+    </footer>
 
-    settingsBtn.addEventListener('click', () => {
-      settingsPanel.style.display = settingsPanel.style.display === 'block' ? 'none' : 'block';
-    });
-    fontSize.addEventListener('change', (e) => {
-      const size = e.target.value;
-      document.body.style.fontSize = size === 'small' ? '14px' : size === 'large' ? '20px' : '16px';
-    });
-  </script>
-
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>

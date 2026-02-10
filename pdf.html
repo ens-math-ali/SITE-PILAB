@@ -1,147 +1,104 @@
-
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>πLab – Documents PDF</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet"/>
-    <script src="js/pdfGridLoader.js" defer></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f2f4f8;
-      color: #1e1e1e;
-      transition: opacity 0.4s ease;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visualisez et téléchargez les documents PDF, cours et séries d'exercices.">
+  <meta name="keywords" content="PDF, Documents, Téléchargement, Cours, Mathématiques, ENS Tétouan">
+  <meta name="author" content="PILAB - ENS Tétouan">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self';">
 
-    header {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 1.5em;
-    }
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://site-pilab.github.io/pdf.html">
+  <meta property="og:title" content="πLab - Documents PDF">
+  <meta property="og:description" content="Visualisez et téléchargez les documents PDF, cours et séries d'exercices.">
+  <meta property="og:image" content="https://site-pilab.github.io/images/logo.svg">
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 40px;
-      justify-content: center;
-    }
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://site-pilab.github.io/pdf.html">
+  <meta property="twitter:title" content="πLab - Documents PDF">
+  <meta property="twitter:description"
+    content="Visualisez et téléchargez les documents PDF, cours et séries d'exercices.">
+  <meta property="twitter:image" content="https://site-pilab.github.io/images/logo.svg">
 
-    .pdf-box {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      padding: 20px;
-      width: 180px;
-      text-align: center;
-    }
-
-    .icon-box {
-      width: 100px;
-      height: 100px;
-      background-color: #003366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.1em;
-      border-radius: 8px;
-      margin: 0 auto 15px;
-      text-transform: uppercase;
-    }
-
-    .btn-download, .btn-view {
-      background-color: #0066cc;
-      color: white;
-      padding: 7px 12px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 0.9em;
-      cursor: pointer;
-      display: block;
-      margin: 8px auto;
-      width: 90%;
-    }
-
-    /* Modal PDF View */
-    .pdf-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .pdf-modal iframe {
-      width: 90%;
-      height: 90%;
-      border: none;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 25px;
-      right: 30px;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    /* Fade Transition */
-    .fade {
-      opacity: 0;
-    }
-  </style>
+  <link rel="canonical" href="https://site-pilab.github.io/pdf.html">
+  <title>πLab - Documents PDF</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Structured Data (Breadcrumb) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://site-pilab.github.io/index.html"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Modules",
+      "item": "https://site-pilab.github.io/unites.html"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Documents PDF",
+      "item": "https://site-pilab.github.io/pdf.html"
+    }]
+  }
+  </script>
 </head>
-<body class="fade">
 
-  <header>Documents PDF</header>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <img src="images/logo.svg" alt="πLab Logo" class="logo-img">
+      </a>
 
-  <div class="grid" id="pdfContainer"></div>
+      <div class="controls">
+        <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+          <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Documents PDF</h1>
+
+    <div class="grid-layout" id="pdfContainer">
+      <!-- Content injected by js/pdfGridLoader.js -->
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <button onclick="history.back()" class="btn-secondary">
+        <span>←</span> Retour
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 πLab - ENS Tétouan Maths. All rights reserved.</p>
+    </div>
+  </footer>
 
   <!-- PDF Modal View -->
-  <div class="pdf-modal" id="pdfModal">
-    <span class="close-btn" onclick="closePdf()">×</span>
-    <iframe id="pdfViewer" src=""></iframe>
+  <div class="modal-overlay" id="pdfModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closePdf()">×</button>
+      <iframe id="pdfViewer" class="modal-iframe" src=""></iframe>
+    </div>
   </div>
 
-  <script src="js/pdfGridLoader.js"></script>
-  <script>
-    // Transition on load
-    window.onload = () => {
-      document.body.classList.remove('fade');
-    }
-
-    // Open PDF
-    function openPdf(path) {
-      const modal = document.getElementById('pdfModal');
-      const viewer = document.getElementById('pdfViewer');
-      viewer.src = path;
-      modal.style.display = "flex";
-    }
-
-    function closePdf() {
-      const modal = document.getElementById('pdfModal');
-      const viewer = document.getElementById('pdfViewer');
-      viewer.src = "";
-      modal.style.display = "none";
-    }
-  </script>
-  
+  <script src="js/pdfGridLoader.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
-</html>
 
+</html>

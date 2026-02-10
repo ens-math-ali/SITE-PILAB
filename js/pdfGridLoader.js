@@ -1,239 +1,275 @@
-// نحصل على اسم الوحدة من رابط الصفحة (مثلاً: ?u=s1-analyse1)
+// Get unit ID from URL
 const unitId = new URLSearchParams(window.location.search).get("u");
 const container = document.getElementById("pdfContainer");
 
-// 🗂️ هنا نُحدد الملفات لكل وحدة
+// PDF Data
 const pdfList = {
-
   "s1-analyse1": [
     { label: "Chp 1", file: "cour1.pdf" },
     { label: "Chp 2", file: "cour2.pdf" },
     { label: "Chp 3", file: "cour3.pdf" },
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" }],
-"s1-statistiques": [
+  "s1-statistiques": [
     { label: "Chp 1", file: "Chp1.pdf" },
     { label: "Chp 2", file: "Chp2.pdf" },
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" }],
-    "s1-algebre1": [
+  "s1-algebre1": [
     { label: "chp 1", file: "chp1.pdf" },
     { label: "chp 2", file: "chp2.pdf" },
-     { label: "chp 3", file: "chp3.pdf" },
+    { label: "chp 3", file: "chp3.pdf" },
     { label: "chp 4", file: "chp4.pdf" },
     { label: "TD1 24/25", file: "TD1.pdf" },
     { label: "TD2 24/25", file: "TD2.pdf" },
-  { label: "TD 1.2.3 21/22", file: "TD1.2.3.pdf" }],
+    { label: "TD 1.2.3 21/22", file: "TD1.2.3.pdf" }],
   "s1-algebre2": [
     { label: "chp 1", file: "chp1.pdf" },
     { label: "chp 2", file: "chp2.pdf" },
-     { label: "TD1", file: "td.pdf" },
+    { label: "TD1", file: "td.pdf" },
     { label: "TD2", file: "TD2.pdf" },
     { label: "TD3", file: "TD3.pdf" },],
-    "s1-info1": [
+  "s1-info1": [
     { label: "chp 1 et 2", file: "chp1et2.pdf" },
-     { label: "chp 3", file: "chp3.pdf" },
+    { label: "chp 3", file: "chp3.pdf" },
     { label: "chp 4", file: "chp4.pdf" },
-     { label: "TD", file: "TD1.pdf" },],
-     "s1-thermo": [
+    { label: "TD", file: "TD1.pdf" },],
+  "s1-thermo": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "résumé", file: "résum.pdf" },
-     { label: "TDS", file: "TDS.pdf" },],
+    { label: "résumé", file: "résum.pdf" },
+    { label: "TDS", file: "TDS.pdf" },],
   "s2-analyse2": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },
     { label: "TD3", file: "TD3.pdf" },],
-    "s2-analyse3": [
+  "s2-analyse3": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TD", file: "TD.pdf" },
+    { label: "TD", file: "TD.pdf" },
     { label: "DL usuels", file: "DL.pdf" },
-   ],
-   "s2-optique": [
+  ],
+  "s2-optique": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS", file: "TDS.pdf" },],
-    "s2-electro": [
+    { label: "TDS", file: "TDS.pdf" },],
+  "s2-electro": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS", file: "TDS.pdf" },],
-   "s2-algebre3": [
+    { label: "TDS", file: "TDS.pdf" },],
+  "s2-algebre3": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },
     { label: "TD3", file: "TD3.pdf" },],
-     "s2-info2": [
+  "s2-info2": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },
-  { label: "TD3", file: "TD3.pdf" },
+    { label: "TD3", file: "TD3.pdf" },
     { label: "TD4", file: "TD4.pdf" },],
-"s3-analyse4": [
+  "s3-analyse4": [
     { label: "chp1", file: "chp1.pdf" },
-     { label: "chp2", file: "chp2.pdf" },
-      { label: "chp3", file: "chp3.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
-     { label: "TD2", file: "TD2.pdf" },
-     { label: "CORR TDS", file: "corr.pdf" },
+    { label: "chp2", file: "chp2.pdf" },
+    { label: "chp3", file: "chp3.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
+    { label: "TD2", file: "TD2.pdf" },
+    { label: "CORR TDS", file: "corr.pdf" },
     { label: "les séries entiers", file: "se.pdf" },
     { label: "séries de fourier", file: "sf.pdf" },],
-    "s3-analyse5": [
+  "s3-analyse5": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS", file: "TDS.pdf" },
+    { label: "TDS", file: "TDS.pdf" },
     { label: "corr TDS", file: "corr.pdf" },],
-    "s3-algebre4": [
+  "s3-algebre4": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS/Corr 22/23", file: "TDS.pdf" },],
-     "s3-sc": [
-     { label: "cours complet", file: "sc.pdf" },
+    { label: "TDS/Corr 22/23", file: "TDS.pdf" },],
+  "s3-sc": [
+    { label: "cours complet", file: "sc.pdf" },
     { label: "résumé", file: "rsm.pdf" },],
-"s3-info3": [
+  "s3-info3": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },],
-    "s3-mecanique": [
+  "s3-mecanique": [
     { label: "mc point", file: "mp.pdf" },
-     { label: "mc solide", file: "ms.pdf" },
-      { label: "résumé mp", file: "rs.pdf" },
-     { label: "TDS", file: "TDS.pdf" },
+    { label: "mc solide", file: "ms.pdf" },
+    { label: "résumé mp", file: "rs.pdf" },
+    { label: "TDS", file: "TDS.pdf" },
     { label: "corr TDS", file: "corr.pdf" },],
- "s4-analyse6": [
+  "s4-analyse6": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
-      { label: "TD2", file: "TD2.pdf" },
-       { label: "CORR TDS", file: "corr.pdf" },
-     { label: "DSE", file: "DSE.pdf" },],
- "s4-numerique": [
+    { label: "TD1", file: "TD1.pdf" },
+    { label: "TD2", file: "TD2.pdf" },
+    { label: "CORR TDS", file: "corr.pdf" },
+    { label: "DSE", file: "DSE.pdf" },],
+  "s4-numerique": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS", file: "TDS.pdf" },],
-     "s4-dida": [
-     { label: "cours complet", file: "cours.pdf" },],
-"s4-proba": [
-    { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
-      { label: "TD2", file: "TD2.pdf" },
-     {label: "Tableau", file: "Tab.pdf" },],
-"s4-algebre5": [
-    { label: "cours complet", file: "cours.pdf" },
-      { label: "TD1", file: "TD1.pdf" },
-          { label: "TD2", file: "TD2.pdf" },],
-    "s4-info4": [
-    { label: "cours complet", file: "cours.pdf" },
-     { label: "TD1", file: "TD1.pdf" },
-      { label: "TD2", file: "TD2.pdf" },],
-"s5-topologie": [
-    { label: "cours complet", file: "cours.pdf" },
-     { label: "Espaces Métriques", file: "EM.pdf" },
-     { label: "TDS/corr", file: "TDS.pdf" },
-      { label: "Démos", file: "demo.pdf" },],
-    "s5-mesure": [
-    { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS/Corr", file: "TDS.pdf" },
-      { label: "Démos", file: "demo.pdf" },],
-    "s5-algebrique": [
-       { label: "démos", file: "Démos.pdf" },
+    { label: "TDS", file: "TDS.pdf" },],
+  "s4-dida": [
     { label: "cours complet", file: "cours.pdf" },],
-   
-   "s5-diontologie": [
-    { label: "cours complet", file: "cours.pdf" },],
-    "s5-didactique": [
+  "s4-proba": [
+    { label: "cours complet", file: "cours.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
+    { label: "TD2", file: "TD2.pdf" },
+    { label: "Tableau", file: "Tab.pdf" },],
+  "s4-algebre5": [
+    { label: "cours complet", file: "cours.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
+    { label: "TD2", file: "TD2.pdf" },],
+  "s4-info4": [
+    { label: "cours complet", file: "cours.pdf" },
+    { label: "TD1", file: "TD1.pdf" },
+    { label: "TD2", file: "TD2.pdf" },],
+  "s5-topologie": [
+    { label: "cours complet", file: "cours.pdf" },
+    { label: "Espaces Métriques", file: "EM.pdf" },
+    { label: "TDS/corr", file: "TDS.pdf" },
+    { label: "Démos", file: "demo.pdf" },],
+  "s5-mesure": [
+    { label: "cours complet", file: "cours.pdf" },
+    { label: "TDS/Corr", file: "TDS.pdf" },
+    { label: "Démos", file: "demo.pdf" },],
+  "s5-algebrique": [
+    { label: "démos", file: "Démos.pdf" },
     { label: "cours complet", file: "cours.pdf" },],
 
-"s6-epi": [
+  "s5-diontologie": [
     { label: "cours complet", file: "cours.pdf" },],
-"s6-methodes": [
+  "s5-didactique": [
     { label: "cours complet", file: "cours.pdf" },],
- "s6-diff": [
+
+  "s6-epi": [
+    { label: "cours complet", file: "cours.pdf" },],
+  "s6-methodes": [
+    { label: "cours complet", file: "cours.pdf" },],
+  "s6-diff": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "TDS/CORR", file: "TDS.pdf" },],
-"s6-complexe": [
+    { label: "TDS/CORR", file: "TDS.pdf" },],
+  "s6-complexe": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "Démos", file: "demo.pdf" },],
-"s6-geo": [
+    { label: "Démos", file: "demo.pdf" },],
+  "s6-geo": [
     { label: "cours complet", file: "cours.pdf" },
-     { label: "Démos", file: "demo.pdf" },
-      { label: "TDS/CORR", file: "TDS.pdf" },],
-"e1": [
-  { label: "EX 24/25", file: "1.pdf" },
+    { label: "Démos", file: "demo.pdf" },
+    { label: "TDS/CORR", file: "TDS.pdf" },],
+  "e1": [
+    { label: "EX 24/25", file: "1.pdf" },
     { label: "EX 23/24", file: "2.pdf" },
-  { label: "EX 21/22", file: "4.pdf" },],
-"e2": [
+    { label: "EX 21/22", file: "4.pdf" },],
+  "e2": [
     { label: "EX 23/24", file: "2.pdf" },
-  { label: "EX 21/22", file: "4.pdf" },],
-"e3": [
+    { label: "EX 21/22", file: "4.pdf" },],
+  "e3": [
     { label: "EX 24/25", file: "1.pdf" },
-     { label: "EX 22/23", file: "2.pdf" },
-   { label: "EX 23/24", file: "3.pdf" },],
-"e4": [
+    { label: "EX 22/23", file: "2.pdf" },
+    { label: "EX 23/24", file: "3.pdf" },],
+  "e4": [
     { label: "EX 24/25", file: "1.pdf" },
-     { label: "EX 22/23", file: "2.pdf" },
-     { label: "EX 23/24", file: "3.pdf" },],
-"e5": [
+    { label: "EX 22/23", file: "2.pdf" },
+    { label: "EX 23/24", file: "3.pdf" },],
+  "e5": [
     { label: "EX 24/25", file: "1.pdf" },
-     { label: "EX 23/24", file: "2.pdf" },
+    { label: "EX 23/24", file: "2.pdf" },
     { label: "EX 22/23", file: "3.pdf" },],
-"e6": [ { label: "EX 24/25", file: "1.pdf" },
-    { label: "EX 23/24", file: "2.pdf" },
-     { label: "EX 22/23", file: "3.pdf" },],
-     "24": [
+  "e6": [{ label: "EX 24/25", file: "1.pdf" },
+  { label: "EX 23/24", file: "2.pdf" },
+  { label: "EX 22/23", file: "3.pdf" },],
+  "24": [
     { label: "MATHS", file: "M24.pdf" },],
-    "23": [
+  "23": [
     { label: "MATHS", file: "M23.pdf" },
-     { label: "didactique", file: "S23.pdf" },],
-    "22": [
+    { label: "didactique", file: "S23.pdf" },],
+  "22": [
     { label: "MATHS", file: "M22.pdf" },
-     { label: "didactique", file: "D22.pdf" },],
-    "21": [
+    { label: "didactique", file: "D22.pdf" },],
+  "21": [
     { label: "MATHS", file: "M21.pdf" },
-     { label: "didactique", file: "D21.pdf" },
+    { label: "didactique", file: "D21.pdf" },
     { label: "CORR MATHS", file: "MC21.pdf" },],
-    "20": [
+  "20": [
     { label: "MATHS DIDACTIQUE", file: "MD20.pdf" },
-     { label: "CORR MATHS", file: "MC20.pdf" },],
-    "19": [
-   { label: "MATHS DIDACTIQUE", file: "MD19.pdf" },
-     { label: "CORR MATHS", file: "MC19.pdf" },],
-    "18": [
+    { label: "CORR MATHS", file: "MC20.pdf" },],
+  "19": [
+    { label: "MATHS DIDACTIQUE", file: "MD19.pdf" },
+    { label: "CORR MATHS", file: "MC19.pdf" },],
+  "18": [
     { label: "MATHS DIDACTIQUE", file: "MD18.pdf" },
-     { label: "CORR MATHS", file: "MC18.pdf" },],
-    "17": [
+    { label: "CORR MATHS", file: "MC18.pdf" },],
+  "17": [
     { label: "MATHS DIDACTIQUE", file: "MD17.pdf" },
-     { label: "CORR MATHS", file: "MC17.pdf" },],
-    "16": [
+    { label: "CORR MATHS", file: "MC17.pdf" },],
+  "16": [
     { label: "DIDACTIQUE sc", file: "D16.pdf" },],
-    
-    
-    
-
-
 };
 
-// نتحقق هل توجد ملفات لهذه الوحدة
+// Render Logic
 if (unitId && pdfList[unitId]) {
   pdfList[unitId].forEach(doc => {
     const path = `assets/pdfs/${unitId}/${doc.file}`;
 
-    const box = document.createElement("div");
-    box.className = "pdf-box";
+    const card = document.createElement("div");
+    card.className = "card pdf-card";
 
     const icon = document.createElement("div");
-    icon.className = "icon-box";
-    icon.textContent = doc.label;
+    icon.className = "pdf-icon";
+    icon.textContent = "📄";
+
+    const title = document.createElement("h3");
+    title.textContent = doc.label;
+
+    const actions = document.createElement("div");
+    actions.className = "pdf-actions";
 
     const viewBtn = document.createElement("button");
-    viewBtn.className = "btn-view";
-    viewBtn.textContent = " Voir";
+    viewBtn.className = "btn-small btn-view";
+    viewBtn.textContent = "Voir";
     viewBtn.onclick = () => openPdf(path);
 
     const downloadBtn = document.createElement("a");
-    downloadBtn.className = "btn-download";
+    downloadBtn.className = "btn-small btn-download";
     downloadBtn.textContent = "Télécharger";
     downloadBtn.href = path;
     downloadBtn.setAttribute("download", doc.file);
 
-    box.appendChild(icon);
-     box.appendChild(viewBtn);
-    box.appendChild(downloadBtn);
-    container.appendChild(box);
+    actions.appendChild(viewBtn);
+    actions.appendChild(downloadBtn);
+
+    card.appendChild(icon);
+    card.appendChild(title);
+    card.appendChild(actions);
+
+    container.appendChild(card);
   });
 } else {
-  container.innerHTML = "<p style='color:red; text-align:center;'>📂 Aucun document trouvé pour cette unité.</p>";
+  container.innerHTML = `
+      <div style="grid-column: 1/-1; text-align: center;">
+        <p style="color:red; font-size: 1.2rem;">📂 Aucun document trouvé pour cette unité.</p>
+        <p><a href="semestres.html" class="btn-secondary">Retour aux semestres</a></p>
+      </div>
+  `;
 }
+
+// Modal Functions (Global)
+window.openPdf = function (path) {
+  const modal = document.getElementById('pdfModal');
+  const viewer = document.getElementById('pdfViewer');
+  if (modal && viewer) {
+    viewer.src = path;
+    modal.classList.add('active');
+  }
+};
+
+window.closePdf = function () {
+  const modal = document.getElementById('pdfModal');
+  const viewer = document.getElementById('pdfViewer');
+  if (modal && viewer) {
+    viewer.src = "";
+    modal.classList.remove('active');
+  }
+};
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+  const modal = document.getElementById('pdfModal');
+  if (modal && e.target === modal) {
+    window.closePdf();
+  }
+});

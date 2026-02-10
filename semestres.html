@@ -1,65 +1,123 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>πLab - Semestres</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'JetBrains Mono', monospace;
-      background-color: #9fd7fe;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      padding: 2rem 0;
-      color: #005bbb;
-    }
-    .grid {
-      display: flex;
-      flex-direction: column;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      max-width: 400px;
-      margin: auto;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Parcourez les semestres de la filière Mathématiques à l'ENS Tétouan. S1 à S6, Examens et Concours.">
+    <meta name="keywords" content="Semestres, S1, S2, S3, S4, S5, S6, Examens, Concours, ENS Tétouan">
+    <meta name="author" content="PILAB - ENS Tétouan">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self';">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://site-pilab.github.io/semestres.html">
+    <meta property="og:title" content="πLab - Semestres">
+    <meta property="og:description"
+        content="Parcourez les semestres de la filière Mathématiques à l'ENS Tétouan. S1 à S6, Examens et Concours.">
+    <meta property="og:image" content="https://site-pilab.github.io/images/logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://site-pilab.github.io/semestres.html">
+    <meta property="twitter:title" content="πLab - Semestres">
+    <meta property="twitter:description"
+        content="Parcourez les semestres de la filière Mathématiques à l'ENS Tétouan. S1 à S6, Examens et Concours.">
+    <meta property="twitter:image" content="https://site-pilab.github.io/images/logo.svg">
+
+    <link rel="canonical" href="https://site-pilab.github.io/semestres.html">
+    <title>πLab - Semestres</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Structured Data (Breadcrumb) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Accueil",
+        "item": "https://site-pilab.github.io/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Semestres",
+        "item": "https://site-pilab.github.io/semestres.html"
+      }]
     }
-    .card {
-      background-color: white;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(83, 230, 241, 0.1);
-      transition: transform 0.4s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      background-color:rgb(121, 235, 255);
-       box-shadow: 7px 5px 56px -14px rgb(186, 149, 222);
-    }
-    
-  </style>
+    </script>
 </head>
+
 <body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.svg" alt="πLab Logo" class="logo-img">
+            </a>
 
-  <h1>Choisissez un semestre</h1>
+            <div class="controls">
+                <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <div class="grid">
-    <div class="card" onclick="window.location.href='unites.html?semestre=s1'">Semestre 1</div>
-    <div class="card" onclick="window.location.href='unites.html?semestre=s2'">Semestre 2</div>
-    <div class="card" onclick="window.location.href='unites.html?semestre=s3'">Semestre 3</div>
-    <div class="card" onclick="window.location.href='unites.html?semestre=s4'">Semestre 4</div>
-    <div class="card" onclick="window.location.href='unites.html?semestre=s5'">Semestre 5</div>
-    <div class="card" onclick="window.location.href='unites.html?semestre=s6'">Semestre 6</div>
-    <div class="card" onclick="window.location.href='unites.html?semestre=examens'">Examens (s1 jusqu'à s6)</div>
-   <div class="card" onclick="window.location.href='unites.html?semestre=Concours'">Concours</div>
-  </div>
+    <main class="container">
+        <h1 class="page-title">Choisissez un Semestre</h1>
+
+        <div class="grid-layout">
+            <a href="unites.html?semestre=s1" class="card">
+                <h3>Semestre 1</h3>
+                <p>Analyse, Algèbre, Thermodynamique...</p>
+            </a>
+            <a href="unites.html?semestre=s2" class="card">
+                <h3>Semestre 2</h3>
+                <p>Analyse, Algèbre, Optique...</p>
+            </a>
+            <a href="unites.html?semestre=s3" class="card">
+                <h3>Semestre 3</h3>
+                <p>Info, Mécanique, Éducation...</p>
+            </a>
+            <a href="unites.html?semestre=s4" class="card">
+                <h3>Semestre 4</h3>
+                <p>Probabilités, Analyse Numérique...</p>
+            </a>
+            <a href="unites.html?semestre=s5" class="card">
+                <h3>Semestre 5</h3>
+                <p>Topologie, Mesure, Droit...</p>
+            </a>
+            <a href="unites.html?semestre=s6" class="card">
+                <h3>Semestre 6</h3>
+                <p>Calcul Différentiel, Rapports...</p>
+            </a>
+            <a href="unites.html?semestre=examens" class="card">
+                <h3>Examens</h3>
+                <p>Archives S1 à S6</p>
+            </a>
+            <a href="unites.html?semestre=Concours" class="card">
+                <h3>Concours</h3>
+                <p>Préparation aux concours</p>
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="btn-secondary">
+                <span>←</span> Retour à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 πLab - ENS Tétouan Maths. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
 </body>
+
 </html>
-
-
-
