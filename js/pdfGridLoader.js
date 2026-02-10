@@ -249,11 +249,20 @@ if (unitId && pdfList[unitId]) {
 
 // Modal Functions (Global)
 window.openPdf = function (path) {
-  const modal = document.getElementById('pdfModal');
-  const viewer = document.getElementById('pdfViewer');
-  if (modal && viewer) {
-    viewer.src = path;
-    modal.classList.add('active');
+  // Mobile detection
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Open in new tab on mobile to avoid blocking issues
+    window.open(path, '_blank');
+  } else {
+    // Desktop modal
+    const modal = document.getElementById('pdfModal');
+    const viewer = document.getElementById('pdfViewer');
+    if (modal && viewer) {
+      viewer.src = path;
+      modal.classList.add('active');
+    }
   }
 };
 
