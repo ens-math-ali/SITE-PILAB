@@ -151,6 +151,7 @@ const pdfList = {
     { label: "Démos", file: "demo.pdf" },
     { label: "TDS/CORR", file: "TDS.pdf" },],
   "e1": [
+    { label: "EX SN 25/26", file: "SN26.pdf" },
     { label: "EX 24/25", file: "1.pdf" },
     { label: "EX 23/24", file: "2.pdf" },
     { label: "EX 21/22", file: "4.pdf" },],
@@ -166,7 +167,9 @@ const pdfList = {
     { label: "EX 22/23", file: "2.pdf" },
     { label: "EX 23/24", file: "3.pdf" },],
   "e5": [
-    { label: "EX 24/25", file: "1.pdf" },
+    { label: "EX SN 25/26", file: "SN26.pdf" },
+    { label: "EX SN 24/25", file: "1.pdf" },
+    { label: "EX SR 24/25", file: "SR25.pdf" },
     { label: "EX 23/24", file: "2.pdf" },
     { label: "EX 22/23", file: "3.pdf" },],
   "e6": [{ label: "EX 24/25", file: "1.pdf" },
