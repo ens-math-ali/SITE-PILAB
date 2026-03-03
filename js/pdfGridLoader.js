@@ -99,16 +99,20 @@ const pdfList = {
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },
     { label: "CORR TDS", file: "corr.pdf" },
+     { label: "CORR2 TDS", file: "corr2.pdf" },
     { label: "DSE", file: "DSE.pdf" },],
   "s4-numerique": [
     { label: "cours complet", file: "cours.pdf" },
+    { label: "CORR TDS", file: "corr.pdf" },
     { label: "TDS", file: "TDS.pdf" },],
   "s4-dida": [
-    { label: "cours complet", file: "cours.pdf" },],
+    { label: "cours complet", file: "cours.pdf" },
+  { label: "cours complet 2", file: "cours2.pdf" },],
   "s4-proba": [
     { label: "cours complet", file: "cours.pdf" },
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },
+    { label: "CORR TDS", file: "corr.pdf" },
     { label: "Tableau", file: "Tab.pdf" },],
   "s4-algebre5": [
     { label: "cours complet", file: "cours.pdf" },
