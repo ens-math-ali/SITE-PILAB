@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
             themeIcon.src = theme === 'dark' ? 'images/sun.svg' : 'images/moon.svg';
         }
 
-        // Update Logo
+        // Update Logo (Skipped since we use a static PNG)
         const logoImgs = document.querySelectorAll('.logo-img');
         logoImgs.forEach(img => {
-            img.src = theme === 'dark' ? 'images/logo-dark.svg' : 'images/logo.svg';
+            // CSS handles dark mode visibility
         });
     };
 

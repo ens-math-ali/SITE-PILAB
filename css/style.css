@@ -31,7 +31,7 @@
     --radius-lg: 20px;
 
     --transition-speed: 0.3s;
-    --header-height: 70px;
+    --header-height: 120px;
 }
 
 [data-theme="dark"] {
@@ -90,6 +90,7 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed);
 }
 
 header .container {
@@ -106,8 +107,12 @@ header .container {
     gap: 0.5rem;
 }
 
+[data-theme="dark"] .logo-img {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) brightness(1.2) contrast(1.1);
+}
+
 .logo-img {
-    height: 40px;
+    height: 95px;
     width: auto;
     display: block;
 }
