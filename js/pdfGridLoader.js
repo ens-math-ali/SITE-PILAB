@@ -145,10 +145,13 @@ const pdfList = {
   "s6-methodes": [
     { label: "cours complet", file: "cours.pdf" },],
   "s6-diff": [
-    { label: "cours complet", file: "cours.pdf" },
+    { label: "cours", file: "cours.pdf" },
+     { label: "cours2 (complet) ", file: "cours2.pdf" },
     { label: "TDS/CORR", file: "TDS.pdf" },],
   "s6-complexe": [
-    { label: "cours complet", file: "cours.pdf" },
+    { label: "cours", file: "cours.pdf" },
+     { label: "CHP1 (complet)", file: "CHP1 (complet).pdf" },
+      { label: "CHP2 (complet)", file: "CHP2 (complet).pdf" },
     { label: "Démos", file: "demo.pdf" },],
   "s6-geo": [
     { label: "cours complet", file: "cours.pdf" },
