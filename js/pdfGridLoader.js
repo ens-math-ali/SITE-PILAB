@@ -161,6 +161,7 @@ const pdfList = {
     { label: "EX 21/22", file: "4.pdf" },],
   "e2": [
     { label: "EX 23/24", file: "2.pdf" },
+    { label: "EX SN 24/25", file: "SN 2425 s2.pdf" },
     { label: "EX 21/22", file: "4.pdf" },],
   "e3": [
     { label: "EX SN 25/26", file: "SN S3 26.pdf" },
