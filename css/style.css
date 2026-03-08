@@ -216,7 +216,10 @@ header .container {
     color: var(--primary-color);
     font-size: 2.5rem;
     position: relative;
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-title::after {
