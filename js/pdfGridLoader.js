@@ -274,7 +274,7 @@ window.openPdf = function (path) {
     const modal = document.getElementById('pdfModal');
     const viewer = document.getElementById('pdfViewer');
     if (modal && viewer) {
-      viewer.src = path;
+      viewer.contentWindow.location.replace(new URL(path, window.location.href).href);
       modal.classList.add('active');
     }
   }
@@ -284,7 +284,7 @@ window.closePdf = function () {
   const modal = document.getElementById('pdfModal');
   const viewer = document.getElementById('pdfViewer');
   if (modal && viewer) {
-    viewer.src = "";
+    viewer.contentWindow.location.replace('about:blank');
     modal.classList.remove('active');
   }
 };
