@@ -99,7 +99,7 @@ const pdfList = {
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },
     { label: "CORR TDS", file: "corr.pdf" },
-     { label: "CORR2 TDS", file: "corr2.pdf" },
+    { label: "CORR2 TDS", file: "corr2.pdf" },
     { label: "DSE", file: "DSE.pdf" },],
   "s4-numerique": [
     { label: "cours complet", file: "cours.pdf" },
@@ -107,7 +107,7 @@ const pdfList = {
     { label: "TDS", file: "TDS.pdf" },],
   "s4-dida": [
     { label: "cours complet", file: "cours.pdf" },
-  { label: "cours complet 2", file: "cours2.pdf" },],
+    { label: "cours complet 2", file: "cours2.pdf" },],
   "s4-proba": [
     { label: "cours complet", file: "cours.pdf" },
     { label: "TD1", file: "TD1.pdf" },
@@ -146,12 +146,12 @@ const pdfList = {
     { label: "cours complet", file: "cours.pdf" },],
   "s6-diff": [
     { label: "cours", file: "cours.pdf" },
-     { label: "cours2 (complet) ", file: "cours2.pdf" },
+    { label: "cours2 (complet) ", file: "cours2.pdf" },
     { label: "TDS/CORR", file: "TDS.pdf" },],
   "s6-complexe": [
-    { label: "cours", file: "cours.pdf" },
-     { label: "cours complet", file: "CHP1 (complet).pdf" },
-      { label: "Chp1 (autre)", file: "chp1.pdf" },
+   { label: "Analyse complexe : Cours", file: "cours Mr Lamarti Sefian Mohammed.pdf" },
+    { label: "cours (autre)", file: "cours (autre).pdf" },
+    { label: "cours complet (autre)", file: "complet (autre).pdf" },
     { label: "Démos", file: "demo.pdf" },],
   "s6-geo": [
     { label: "cours complet", file: "cours.pdf" },
@@ -217,10 +217,10 @@ const pdfList = {
 // Render Logic
 const renderPDFs = (filter) => {
   container.innerHTML = '';
-  
+
   if (unitId && pdfList[unitId]) {
     const docs = pdfList[unitId];
-    
+
     docs.forEach(doc => {
       const label = doc.label.toLowerCase();
       let type = "all";
@@ -285,9 +285,9 @@ renderPDFs("all");
 // Filter buttons
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      renderPDFs(e.target.getAttribute('data-filter'));
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderPDFs(e.target.getAttribute('data-filter'));
   });
 });
 
