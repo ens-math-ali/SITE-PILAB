@@ -1,0 +1,84 @@
+% Replaced simple template with a more feature-rich document
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\title{\includegraphics[height=1.6cm]{../pilab.png}\\[0.7em]My First LaTeX Document}
+\author{Author Name}
+\date{\today}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document expands the original minimal template. It demonstrates how to include figures, equations, theorems, and simple tables. Use this as a starting point for longer documents.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+This is a basic LaTeX document template that has been developed with a few common features.
+
+\subsection{Goals}
+The goals of this expanded template are:
+\begin{itemize}
+  \item Show how to include images.
+  \item Provide examples of mathematical environments.
+  \item Include a small table and a theorem.
+\end{itemize}
+
+\section{Mathematics}
+Here is an example of a simple inline equation: $a^2 + b^2 = c^2$.
+
+And here is a numbered equation using the \texttt{align} environment:
+\begin{align}
+    E &= mc^2, \\
+    F &= ma.
+\end{align}
+
+An example theorem:
+\begin{theorem}
+Let $f(x)=ax^2+bx+c$ with $a\neq0$. Then $f$ has at most two real roots.
+\end{theorem}
+
+\section{Figures}
+Below is an example figure included from the local folder (file: \texttt{pilab.png}). Adjust the filename if needed.
+
+  \includegraphics[width=0.5\textwidth]{../pilab.png}
+  \caption{Project logo or example image.}
+  \label{fig:logo}
+\end{figure}
+
+\section{A Small Table}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lcr}
+    \toprule
+    Name & Value & Note \\
+    \midrule
+    Alpha & 42 & example \\
+    Beta & 3.14 & example \\
+    Gamma & 0 & example \\
+    \bottomrule
+  \end{tabular}
+  \caption{A simple table using \texttt{booktabs}.}
+\end{table}
+
+\section{Conclusion}
+This is the end of the developed template. Remove or adapt sections as required.
+
+\end{document}

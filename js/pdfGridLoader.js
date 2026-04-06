@@ -215,51 +215,81 @@ const pdfList = {
 };
 
 // Render Logic
-if (unitId && pdfList[unitId]) {
-  pdfList[unitId].forEach(doc => {
-    const path = `assets/pdfs/${unitId}/${doc.file}`;
+const renderPDFs = (filter) => {
+  container.innerHTML = '';
+  
+  if (unitId && pdfList[unitId]) {
+    const docs = pdfList[unitId];
+    
+    docs.forEach(doc => {
+      const label = doc.label.toLowerCase();
+      let type = "all";
+      if (label.includes("cours") || label.includes("chp") || label.includes("rsm") || label.includes("résum") || label.includes("démo") || label.includes("dl") || label.includes("sc") || label.includes("mp") || label.includes("ms")) type = "cours";
+      else if (label.includes("td")) type = "td";
+      else if (label.includes("ex ") || unitId.startsWith('e') || !isNaN(unitId) || label.includes("sn") || label.includes("sr") || label.includes("maths") || label.includes("didactique")) type = "examen";
+      else type = "cours";
 
-    const card = document.createElement("div");
-    card.className = "card pdf-card";
+      if (filter !== "all" && type !== filter) return;
 
-    const icon = document.createElement("div");
-    icon.className = "pdf-icon";
-    icon.textContent = "📄";
+      const path = `assets/pdfs/${unitId}/${doc.file}`;
 
-    const title = document.createElement("h3");
-    title.textContent = doc.label;
+      const card = document.createElement("div");
+      card.className = "card pdf-card";
 
-    const actions = document.createElement("div");
-    actions.className = "pdf-actions";
+      const icon = document.createElement("div");
+      icon.className = "pdf-icon";
+      icon.textContent = "📄";
 
-    const viewBtn = document.createElement("button");
-    viewBtn.className = "btn-small btn-view";
-    viewBtn.textContent = "Voir";
-    viewBtn.onclick = () => openPdf(path);
+      const title = document.createElement("h3");
+      title.textContent = doc.label;
 
-    const downloadBtn = document.createElement("a");
-    downloadBtn.className = "btn-small btn-download";
-    downloadBtn.textContent = "Télécharger";
-    downloadBtn.href = path;
-    downloadBtn.setAttribute("download", doc.file);
+      const actions = document.createElement("div");
+      actions.className = "pdf-actions";
 
-    actions.appendChild(viewBtn);
-    actions.appendChild(downloadBtn);
+      const viewBtn = document.createElement("button");
+      viewBtn.className = "btn-small btn-view";
+      viewBtn.textContent = "Voir";
+      viewBtn.onclick = () => openPdf(path);
 
-    card.appendChild(icon);
-    card.appendChild(title);
-    card.appendChild(actions);
+      const downloadBtn = document.createElement("a");
+      downloadBtn.className = "btn-small btn-download";
+      downloadBtn.textContent = "Télécharger";
+      downloadBtn.href = path;
+      downloadBtn.setAttribute("download", doc.file);
 
-    container.appendChild(card);
+      actions.appendChild(viewBtn);
+      actions.appendChild(downloadBtn);
+
+      card.appendChild(icon);
+      card.appendChild(title);
+      card.appendChild(actions);
+
+      container.appendChild(card);
+    });
+
+    if (container.children.length === 0) {
+      container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; margin-top: 2rem; color: var(--text-muted);"><p>Aucun document trouvé pour ce type.</p></div>`;
+    }
+  } else {
+    container.innerHTML = `
+        <div style="grid-column: 1/-1; text-align: center;">
+          <p style="color:red; font-size: 1.2rem;">📂 Aucun document trouvé pour cette unité.</p>
+          <p><a href="semestres.html" class="btn-secondary">Retour aux semestres</a></p>
+        </div>
+    `;
+  }
+};
+
+renderPDFs("all");
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      renderPDFs(e.target.getAttribute('data-filter'));
   });
-} else {
-  container.innerHTML = `
-      <div style="grid-column: 1/-1; text-align: center;">
-        <p style="color:red; font-size: 1.2rem;">📂 Aucun document trouvé pour cette unité.</p>
-        <p><a href="semestres.html" class="btn-secondary">Retour aux semestres</a></p>
-      </div>
-  `;
-}
+});
 
 // Modal Functions (Global)
 window.openPdf = function (path) {

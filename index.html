@@ -32,6 +32,7 @@
     <title>πLab - ENS Tétouan Maths</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="apple-touch-icon" href="images/favicon.svg">
+    <link rel="manifest" href="manifest.json">
 
     <!-- Fonts & CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -58,14 +59,14 @@
     }
     </script>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GX50ZP8H44"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GX50ZP8H44"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-GX50ZP8H44');
-</script>
+        gtag('config', 'G-GX50ZP8H44');
+    </script>
 </head>
 
 <body>
@@ -75,10 +76,18 @@
                 <img src="images/pilab.png" alt="πLab Logo" class="logo-img">
             </a>
 
-            <div class="controls">
-                <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
-                    <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
-                </button>
+            <div class="nav-wrapper">
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Rechercher (ex: Analyse, S3)..."
+                        class="search-input" aria-label="Recherche">
+                    <ul id="search-results" class="search-results"></ul>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="controls">
+                    <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                        <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
+                    </button>
+                </div>
             </div>
 
         </div>
@@ -93,6 +102,24 @@
                 Entrer
                 <span class="arrow"></span>
             </a>
+        </section>
+
+        <section class="container latest-adds-section" style="margin-bottom: 4rem;">
+            <h2 class="section-title" style="text-align: center; display: block;">Derniers Ajouts</h2>
+            <div class="grid-layout">
+                <a href="pdf.html?u=s5-topologie" class="card">
+                    <h3>Topologie S5</h3>
+                    <p>Cours complet et TDs récents</p>
+                </a>
+                <a href="pdf.html?u=s2-analyse2" class="card">
+                    <h3>Analyse 2 S2</h3>
+                    <p>Résumé détaillé ajouté</p>
+                </a>
+                <a href="unites.html?semestre=examens" class="card">
+                    <h3>Examens S1 à S6</h3>
+                    <p>Mise à jour archives 2024</p>
+                </a>
+            </div>
         </section>
 
         <section class="container about-section">

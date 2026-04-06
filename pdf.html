@@ -29,7 +29,8 @@
   <title>πLab - Documents PDF</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="apple-touch-icon" href="images/favicon.svg">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css?v=restore">
   <!-- Structured Data (Breadcrumb) -->
   <script type="application/ld+json">
   {
@@ -62,16 +63,29 @@
         <img src="images/pilab.png" alt="πLab Logo" class="logo-img">
       </a>
 
-      <div class="controls">
-        <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
-          <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
-        </button>
-      </div>
+            <div class="nav-wrapper">
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Rechercher (ex: Analyse, S3)..." class="search-input" aria-label="Recherche">
+                    <ul id="search-results" class="search-results"></ul>
+                </div>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="controls">
+                    <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                        <img id="theme-icon" src="images/moon.svg" alt="Dark Mode" class="theme-icon-img">
+                    </button>
+                </div>
+            </div>
     </div>
   </header>
 
   <main class="container">
     <h1 class="page-title">Documents PDF</h1>
+
+    <div class="filter-controls" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+      <button class="btn-secondary filter-btn active" data-filter="all">Tous</button>
+      <button class="btn-secondary filter-btn" data-filter="cours">Cours</button>
+      <button class="btn-secondary filter-btn" data-filter="td">TD & Séries</button>
+    </div>
 
     <div class="grid-layout" id="pdfContainer">
       <!-- Content injected by js/pdfGridLoader.js -->
