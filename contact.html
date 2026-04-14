@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,14 +19,17 @@
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
         }
+
         .form-group {
             margin-bottom: 1.5rem;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
+
         .form-control {
             width: 100%;
             padding: 0.8rem;
@@ -35,16 +39,19 @@
             color: var(--text-color);
             font-family: inherit;
         }
+
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
         }
+
         textarea.form-control {
             resize: vertical;
             min-height: 120px;
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -53,7 +60,8 @@
             </a>
             <div class="nav-wrapper">
                 <div class="search-container">
-                    <input type="text" id="global-search" placeholder="Rechercher (ex: Analyse, S3)..." class="search-input" aria-label="Recherche">
+                    <input type="text" id="global-search" placeholder="Rechercher (ex: Analyse, S3)..."
+                        class="search-input" aria-label="Recherche">
                     <ul id="search-results" class="search-results"></ul>
                 </div>
                 <a href="contact.html" class="nav-link" style="color: var(--primary-color);">Contact</a>
@@ -68,23 +76,23 @@
 
     <main class="container">
         <h1 class="page-title">Contact & Contribution</h1>
-        
+
         <div class="contact-container">
             <p style="text-align: center; margin-bottom: 2rem; color: var(--text-muted);">
-                Vous souhaitez partager un résumé, un TD, un ancien examen, ou simplement nous contacter ? Remplissez ce formulaire !
+                Vous souhaitez partager un résumé, un TD, un ancien examen, ou simplement nous contacter ? Remplissez ce
+                formulaire !
             </p>
-            <form id="contactForm" action="https://formsubmit.co/imalailazkai.50026091@gmail.com" method="POST" enctype="multipart/form-data">
+            <form id="contactForm" action="https://formsubmit.co/imalailazkai.50026091@gmail.com" method="POST"
+                enctype="multipart/form-data">
                 <!-- Disable Captcha -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="Nouveau message depuis πLab !">
 
-                <div class="form-group">
-                    <label for="name">Nom Complet</label>
-                    <input type="text" id="name" name="name" class="form-control" required placeholder="Votre nom...">
-                </div>
+
                 <div class="form-group">
                     <label for="email">Adresse Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required placeholder="votre.email@exemple.com">
+                    <input type="email" id="email" name="email" class="form-control" required
+                        placeholder="votre.email@exemple.com">
                 </div>
                 <div class="form-group">
                     <label for="type">Type de contribution</label>
@@ -97,12 +105,15 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message ou Lien (Google Drive, etc.)</label>
-                    <textarea id="message" name="message" class="form-control" placeholder="Laissez votre message ou un lien vers vos fichiers ici... (Si le fichier est très grand, mettez le lien Google Drive)"></textarea>
+                    <textarea id="message" name="message" class="form-control"
+                        placeholder="Laissez votre message ou un lien vers vos fichiers ici... (Si le fichier est très grand, mettez le lien Google Drive)"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="attachment">Joindre un fichier (Max 5MB)</label>
-                    <input type="file" id="attachment" name="attachment" class="form-control" accept=".pdf,.png,.jpg,.jpeg">
-                    <small id="fileError" style="color: red; display: none; margin-top: 5px;">Le fichier est trop grand. Limite: 5MB.</small>
+                    <input type="file" id="attachment" name="attachment" class="form-control"
+                        accept=".pdf,.png,.jpg,.jpeg">
+                    <small id="fileError" style="color: red; display: none; margin-top: 5px;">Le fichier est trop grand.
+                        Limite: 5MB.</small>
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Envoyer</button>
             </form>
@@ -117,10 +128,10 @@
 
     <script src="js/main.js" defer></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             const fileInput = document.getElementById('attachment');
             const fileError = document.getElementById('fileError');
-            
+
             if (fileInput.files.length > 0) {
                 const fileSize = fileInput.files[0].size / 1024 / 1024; // in MB
                 if (fileSize > 5) {
@@ -134,4 +145,5 @@
         });
     </script>
 </body>
+
 </html>
