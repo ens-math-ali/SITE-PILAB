@@ -155,14 +155,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const scoredEntries = searchDB.map(item => {
+                const normalizedQuery = normalizeStr(rawQuery);
+                const normalizedName = normalizeStr(item.name);
                 const targetStr = normalizeStr(`${item.name} ${item.sem} ${item.k}`);
                 const targetWords = targetStr.split(/\s+/).filter(w => w.length > 0);
                 
                 let score = 0;
                 
+                // Gros bonus si la recherche est exactement dans le nom
+                if (normalizedName.includes(normalizedQuery)) {
+                    score += 50;
+                }
+
                 queryWords.forEach(qWord => {
-                    // Exact inclusions (e.g., matching a full word or a prefix)
-                    if (targetStr.includes(qWord)) {
+                    // Exact full word match
+                    if (targetWords.includes(qWord)) {
+                        score += 10;
+                    }
+                    // Substring match
+                    else if (targetStr.includes(qWord)) {
                         score += 5;
                     } else {
                         // Fuzzy check (typos, similar words)
@@ -190,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .filter(entry => entry.score > 0)
                 .sort((a, b) => b.score - a.score)
                 .map(entry => entry.item)
-                .slice(0, 5);
+                .slice(0, 8);
 
             if (results.length > 0) {
                 results.forEach(item => {
