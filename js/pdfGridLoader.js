@@ -115,7 +115,8 @@ const pdfList = {
     { label: "CORR TDS", file: "corr.pdf" },
     { label: "Tableau", file: "Tab.pdf" },],
   "s4-algebre5": [
-    { label: "cours complet", file: "cours.pdf" },
+    { label: "cours", file: "cours.pdf" },
+    { label: "cours complet 2", file: "cours2526.pdf" },
     { label: "TD1", file: "TD1.pdf" },
     { label: "TD2", file: "TD2.pdf" },],
   "s4-info4": [
@@ -149,7 +150,7 @@ const pdfList = {
     { label: "cours2 (complet) ", file: "cours2.pdf" },
     { label: "TDS/CORR", file: "TDS.pdf" },],
   "s6-complexe": [
-   { label: "Analyse complexe : Cours", file: "cours Mr Lamarti Sefian Mohammed.pdf" },
+    { label: "Analyse complexe : Cours", file: "cours Mr Lamarti Sefian Mohammed.pdf" },
     { label: "cours (autre)", file: "cours (autre).pdf" },
     { label: "cours complet (autre)", file: "complet (autre).pdf" },
     { label: "Démos", file: "demo.pdf" },],
